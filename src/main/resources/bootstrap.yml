@@ -1,0 +1,27 @@
+server:
+  servlet:
+    context-path: /base
+    session:
+      cookie:
+        secure: true
+
+springdoc:
+  swagger-ui:
+    display-operation-id: true
+    try-it-out-enabled: true
+    filter: true
+
+spring:
+  application:
+    name: base
+  profiles:
+    active: dev
+  group-configs:
+    - group: AppAPI
+      display-name: App API
+      paths-to-match:
+        - /app/**
+    - group: ManagementAPI
+      display-name: Management API
+      paths-to-match:
+        - /management/**
