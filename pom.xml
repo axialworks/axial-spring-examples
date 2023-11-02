@@ -23,12 +23,44 @@
 
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+
+
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
 
+        <!-- Axial Dependencies -->
         <dependency>
             <groupId>com.axial</groupId>
             <artifactId>openapi</artifactId>
             <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-collections4</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Common Dependencies -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
         </dependency>
 
     </dependencies>
@@ -38,14 +70,10 @@
     </profiles>
 
     <build>
-
-
         <plugins>
 
 
-
         </plugins>
-
     </build>
 
 </project>
