@@ -8,6 +8,7 @@
         <groupId>com.axial</groupId>
         <artifactId>axial-spring-boot-parent</artifactId>
         <version>1.0</version>
+        <relativePath>../parent-pom/pom.xml</relativePath>
     </parent>
 
     <groupId>com.axial</groupId>
@@ -16,9 +17,14 @@
 
     <packaging>war</packaging>
 
+    <name>base</name>
+    <description>Base Apps</description>
+    <url></url>
+
     <properties>
 
         <java.version>17</java.version>
+
 
 
     </properties>
@@ -71,7 +77,52 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war-plugin.version}</version>
+                <!--Adding a provided "spring-boot-starter-tomcat" dependency as stated in-->
+                <!--here https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file-->
+                <!--doesn't work. The generated war runs on Weblogic but the project won't run via spring-boot:run or via IDE-->
+                <configuration>
+                    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+                </configuration>
+            </plugin>
 
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>pre-integration-test</id>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test</id>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <outputFileName>openapi.json</outputFileName>
+                    <outputDir>${project.build.directory}</outputDir>
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
