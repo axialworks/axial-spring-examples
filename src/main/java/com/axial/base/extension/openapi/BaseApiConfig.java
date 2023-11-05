@@ -1,4 +1,4 @@
-package com.axial.extension.openapi;
+package com.axial.base.extension.openapi;
 
 import com.axial.modules.openapi.ApiCustomizer;
 import org.springframework.stereotype.Component;

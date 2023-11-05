@@ -1,4 +1,4 @@
-package com.axial;
+package com.axial.base;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

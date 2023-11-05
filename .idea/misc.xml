@@ -5,6 +5,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../parent-pom/pom.xml" />
+        <option value="$PROJECT_DIR$/../openapi/pom.xml" />
+        <option value="$PROJECT_DIR$/../commons/pom.xml" />
+        <option value="$PROJECT_DIR$/../sample-backend/pom.xml" />
       </list>
     </option>
   </component>

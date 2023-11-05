@@ -1,4 +1,4 @@
-package com.axial;
+package com.axial.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +10,8 @@ import org.springframework.web.WebApplicationInitializer;
 
 @ComponentScan(basePackageClasses = {
         PackageMarker.class,
-        com.axial.PackageMarker.class
+        com.axial.modules.openapi.PackageMarker.class,
+        com.axial.modules.commons.PackageMarker.class
 })
 @SpringBootApplication
 @EnableConfigurationProperties
