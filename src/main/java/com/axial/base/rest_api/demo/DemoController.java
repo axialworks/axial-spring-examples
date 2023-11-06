@@ -4,6 +4,7 @@ import com.axial.base.extension.message.enums.BaseMessageKey;
 import com.axial.modules.commons.component.exception.ExceptionHelper;
 import com.axial.modules.commons.core.message.enums.CommonMessageKey;
 import com.axial.modules.commons.core.message.enums.Severity;
+import com.axial.modules.commons.core.template_engine.HtmlTemplateService;
 import com.axial.modules.commons.core.template_engine.TextTemplateService;
 import com.axial.modules.commons.model.SuccessResponse;
 import com.axial.modules.commons.component.mapping.ObjectMappingService;
@@ -12,6 +13,7 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.context.Context;
 
@@ -29,6 +31,8 @@ public class DemoController {
     private final ObjectMappingService objectMappingService;
 
     private final TextTemplateService textTemplateService;
+
+    private final HtmlTemplateService htmlTemplateService;
 
 
     @GetMapping(value = "/demo1", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -97,7 +101,7 @@ public class DemoController {
                 .addHashItem("deepCopy", objectMappingService.makeDeepCopy(lst)));
     }
 
-    @PostMapping(value = "/demo9-template", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/demo9-test-template", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GenericSuccessResponse> demo9(@RequestBody TemplateRequest request) {
 
 
@@ -112,6 +116,18 @@ public class DemoController {
         final GenericSuccessResponse response = GenericSuccessResponse.builder().success(Boolean.TRUE).build();
         response.addHashItem("resultText", processedStr);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(value = "/demo10-html-template")
+    public ResponseEntity<String> demo10(@RequestParam String message) {
+
+
+        final Context context = new Context();
+        context.setVariable("message", message);
+
+        final String processedStr = htmlTemplateService.processTemplate("demo-page", context);
+
+        return ResponseEntity.ok(processedStr);
     }
 
 }
