@@ -1,8 +1,8 @@
 package com.axial.base.rest_api.demo;
 
-import com.axial.base.constants.BaseMessageKeys;
+import com.axial.base.extension.message.enums.BaseMessageKey;
 import com.axial.modules.commons.exception.ExceptionHelper;
-import com.axial.modules.commons.exception.handler.RestExceptionUtils;
+import com.axial.modules.commons.message.enums.CommonMessageKey;
 import com.axial.modules.commons.message.enums.Severity;
 import com.axial.modules.commons.message.model.SuccessResponse;
 import lombok.AllArgsConstructor;
@@ -27,14 +27,14 @@ public class DemoController {
     @GetMapping(value = "/demo2", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> demo2() {
 
-        throw ExceptionHelper.newGenericException(BaseMessageKeys.ExceptionMessages.DEMO_MESSAGE, "Deneme 1-2");
+        throw ExceptionHelper.newGenericException(BaseMessageKey.DEMO_MESSAGE, "Deneme 1-2");
     }
 
 
     @GetMapping(value = "/demo3", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> demo3() {
 
-        throw ExceptionHelper.newGenericException(BaseMessageKeys.ExceptionMessages.REFLECTION_ENUM_CODE_TYPE_INCOMPATIBLE);
+        throw ExceptionHelper.newGenericException(CommonMessageKey.REFLECTION_ENUM_CODE_TYPE_INCOMPATIBLE);
     }
 
     @PostMapping(value = "/demo4", produces = MediaType.APPLICATION_JSON_VALUE)
