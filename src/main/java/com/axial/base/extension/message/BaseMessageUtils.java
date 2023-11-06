@@ -1,8 +1,8 @@
 package com.axial.base.extension.message;
 
 import com.axial.base.extension.message.constants.BaseMessageConstants;
-import com.axial.modules.commons.message.CommonMessageUtils;
-import com.axial.modules.commons.message.enums.Severity;
+import com.axial.modules.commons.core.message.CommonMessageUtils;
+import com.axial.modules.commons.core.message.enums.Severity;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

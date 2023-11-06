@@ -1,15 +1,19 @@
 package com.axial.base.rest_api.demo;
 
-import com.axial.modules.commons.core.message.enums.Severity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Map;
+import java.util.Objects;
+
 @Getter
 @Setter
 @NoArgsConstructor
-public class DemoRequest {
+public class TemplateRequest {
 
-    private Severity severity;
+    private String text;
+
+    private Map<String, String> parameters;
 
 }

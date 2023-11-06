@@ -34,3 +34,5 @@ logging:
     org.hibernate: DEBUG
   file:
     name: logs/dev_app.log
+  org:
+    thymeleaf: DEBUG
