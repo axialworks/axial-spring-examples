@@ -2,7 +2,7 @@ package com.axial.base.extension.message.enums;
 
 import com.axial.base.extension.message.BaseMessageUtils;
 import com.axial.modules.commons.core.message.enums.Severity;
-import com.axial.modules.commons.core.message.definition.MessageKey;
+import com.axial.modules.commons.outline.message_key.MessageKey;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

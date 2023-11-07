@@ -1,5 +1,10 @@
 package com.axial.base.rest_api.demo;
 
+import com.axial.base.extension.database.entity.UserEntity;
+import com.axial.base.extension.database.repository.jdbc.UserDao;
+import com.axial.base.extension.database.repository.jpa.HobbyRepository;
+import com.axial.base.extension.database.repository.jpa.UserHobbyRepository;
+import com.axial.base.extension.database.repository.jpa.UserRepository;
 import com.axial.base.extension.message.enums.BaseMessageKey;
 import com.axial.modules.commons.component.exception.ExceptionHelper;
 import com.axial.modules.commons.core.message.enums.CommonMessageKey;
@@ -13,7 +18,6 @@ import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.context.Context;
 
@@ -33,6 +37,14 @@ public class DemoController {
     private final TextTemplateService textTemplateService;
 
     private final HtmlTemplateService htmlTemplateService;
+
+    private final UserRepository userRepository;
+
+    private final HobbyRepository hobbyRepository;
+
+    private final UserHobbyRepository userHobbyRepository;
+
+    private final UserDao userDao;
 
 
     @GetMapping(value = "/demo1", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -128,6 +140,25 @@ public class DemoController {
         final String processedStr = htmlTemplateService.processTemplate("demo-page", context);
 
         return ResponseEntity.ok(processedStr);
+    }
+
+    @GetMapping(value = "/demo11-db")
+    public ResponseEntity<GenericSuccessResponse> demo11() {
+
+        final GenericSuccessResponse response = GenericSuccessResponse.builder().success(true).build();
+
+        final List<UserEntity> userEntityList = userRepository.findAll();
+        response.addHashItem("userList", userEntityList);
+
+        response.addHashItem("hobbyList", hobbyRepository.findAll());
+        response.addHashItem("userHobbyList", userHobbyRepository.findAll());
+
+        response.addHashItem("userHobbyExtNoMapperList", userRepository.findUserCityExtNoMapperList());
+        //response.addHashItem("userCityExtRowMapperConstList", userRepository.findUserCityExtRowMapperConstList());
+
+        response.addHashItem("userHobbyExtNoMapperDaoList", userDao.getUserHobbyExtModels());
+
+        return ResponseEntity.ok(response);
     }
 
 }

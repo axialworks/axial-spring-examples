@@ -118,6 +118,15 @@
             </plugin>
 
         </plugins>
+
+        <!-- Solves @ char problem inside yml files -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
     </build>
 
 </project>
