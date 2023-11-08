@@ -2,7 +2,7 @@ api-config:
   name: Base Application Backend APIs
   version: @project.version@
   domains:
-    - /base
+    - /examples
   apis:
     APP_API:
       name: AppAPI
@@ -16,12 +16,12 @@ api-config:
       path: /management/**
 
 axial:
-  message-bundle: BaseMessages
+  message-bundle: ExampleMessages
   default-locale: tr
 
 server:
   servlet:
-    context-path: /base
+    context-path: /examples
     session:
       cookie:
         secure: true
@@ -43,7 +43,7 @@ springdoc:
 
 spring:
   application:
-    name: base
+    name: examples
   profiles:
     active: dev
   cloud:

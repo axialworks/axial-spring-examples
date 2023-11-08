@@ -12,13 +12,13 @@
     </parent>
 
     <groupId>com.axial</groupId>
-    <artifactId>base</artifactId>
+    <artifactId>examples</artifactId>
     <version>1.0</version>
 
     <packaging>war</packaging>
 
-    <name>base</name>
-    <description>Base Apps</description>
+    <name>examples</name>
+    <description>Examples App</description>
     <url></url>
 
     <properties>
