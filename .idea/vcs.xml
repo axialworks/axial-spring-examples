@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../commons" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../openapi" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../parent-pom" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../sample-backend" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>
