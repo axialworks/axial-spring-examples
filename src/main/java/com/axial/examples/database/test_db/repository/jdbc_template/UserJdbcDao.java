@@ -1,7 +1,8 @@
-package com.axial.examples.database.repository.jdbc_template;
+package com.axial.examples.database.test_db.repository.jdbc_template;
 
-import com.axial.examples.database.model.UserHobbyExtRowMapperModel;
+import com.axial.examples.database.test_db.model.UserHobbyExtRowMapperModel;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -27,7 +28,7 @@ public class UserJdbcDao {
             + " LEFT JOIN dm_tbl_user U ON U.USR_ID = UH.USRHBY_USR_ID"
             + " LEFT JOIN dm_tbl_hobby H ON H.HOBBY_ID = UH.USRHBY_HOBBY_ID";
 
-    private final NamedParameterJdbcTemplate jdbcTemplate;
+    private final @Qualifier("namedParameterJdbcTemplateTest") NamedParameterJdbcTemplate jdbcTemplate;
 
     public List<UserHobbyExtRowMapperModel> getUserHobbyExtModels() {
 

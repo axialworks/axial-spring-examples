@@ -1,8 +1,8 @@
-package com.axial.examples.database.repository.jpa;
+package com.axial.examples.database.test_db.repository.jpa;
 
-import com.axial.examples.database.model.UserHobbyExtNoMapperModel;
-import com.axial.examples.database.model.UserHobbyExtRowMapperModel;
-import com.axial.examples.database.entity.UserEntity;
+import com.axial.examples.database.test_db.model.UserHobbyExtNoMapperModel;
+import com.axial.examples.database.test_db.model.UserHobbyExtRowMapperModel;
+import com.axial.examples.database.test_db.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

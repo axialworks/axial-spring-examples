@@ -1,7 +1,7 @@
-package com.axial.examples.database.entity;
+package com.axial.examples.database.test_db.entity;
 
 import com.axial.examples.enums.Gender;
-import com.axial.examples.database.converter.GenderConverter;
+import com.axial.examples.database.test_db.converter.GenderConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "DM_TBL_USER")
+@Table(name = "dm_tbl_user")
 public class UserEntity {
 
     @Id

@@ -1,10 +1,10 @@
 package com.axial.examples.rest_api.demo;
 
-import com.axial.examples.database.entity.UserEntity;
-import com.axial.examples.database.repository.jdbc_template.UserJdbcDao;
-import com.axial.examples.database.repository.jpa.HobbyRepository;
-import com.axial.examples.database.repository.jpa.UserHobbyRepository;
-import com.axial.examples.database.repository.jpa.UserRepository;
+import com.axial.examples.database.test_db.entity.UserEntity;
+import com.axial.examples.database.test_db.repository.jdbc_template.UserJdbcDao;
+import com.axial.examples.database.test_db.repository.jpa.HobbyRepository;
+import com.axial.examples.database.test_db.repository.jpa.UserHobbyRepository;
+import com.axial.examples.database.test_db.repository.jpa.UserRepository;
 import com.axial.examples.extension.message.enums.BaseMessageKey;
 import com.axial.modules.commons.component.exception.ExceptionHelper;
 import com.axial.modules.commons.core.message.enums.CommonMessageKey;

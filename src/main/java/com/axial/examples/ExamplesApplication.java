@@ -10,6 +10,10 @@ import org.springframework.web.WebApplicationInitializer;
 
 @ComponentScan(basePackageClasses = {
         PackageMarker.class,
+        com.axial.examples.database.app_db.PackageMarker.class,
+        com.axial.examples.database.test_db.PackageMarker.class,
+        com.axial.examples.database.app_db.config.AppJpaConfiguration.class,
+        com.axial.examples.database.test_db.config.TestJpaConfiguration.class,
         com.axial.modules.openapi.PackageMarker.class,
         com.axial.modules.commons.PackageMarker.class
 })

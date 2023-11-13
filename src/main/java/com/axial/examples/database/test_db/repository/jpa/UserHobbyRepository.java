@@ -1,7 +1,7 @@
-package com.axial.examples.database.repository.jpa;
+package com.axial.examples.database.test_db.repository.jpa;
 
-import com.axial.examples.database.composite_pk.UserHobbyId;
-import com.axial.examples.database.entity.UserHobbyEntity;
+import com.axial.examples.database.test_db.composite_pk.UserHobbyId;
+import com.axial.examples.database.test_db.entity.UserHobbyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

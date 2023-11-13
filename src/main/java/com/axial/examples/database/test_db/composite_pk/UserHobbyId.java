@@ -1,4 +1,4 @@
-package com.axial.examples.database.composite_pk;
+package com.axial.examples.database.test_db.composite_pk;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

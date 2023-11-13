@@ -1,4 +1,4 @@
-package com.axial.examples.database.model;
+package com.axial.examples.database.test_db.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

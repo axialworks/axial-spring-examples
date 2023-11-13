@@ -1,13 +1,14 @@
-package com.axial.examples.database.repository.entity_manager;
+package com.axial.examples.database.test_db.repository.entity_manager;
 
 
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
-public class UserEntityDao {
+public class UserDao {
 
     private static final String SELECT_QUERY =
             "SELECT"

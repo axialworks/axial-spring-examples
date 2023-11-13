@@ -1,4 +1,4 @@
-package com.axial.examples.database.model.row_mapper;
+package com.axial.examples.database.test_db.model.row_mapper;
 
 public class UserHobbyExtRowMapperModelMapper // implements RowMapper<UserHobbyExtRowMapperModel> {
 

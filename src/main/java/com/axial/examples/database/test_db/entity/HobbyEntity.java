@@ -1,4 +1,4 @@
-package com.axial.examples.database.entity;
+package com.axial.examples.database.test_db.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
-@Table(name = "DM_TBL_HOBBY")
+@Table(name = "dm_tbl_hobby")
 public class HobbyEntity {
 
     @Id

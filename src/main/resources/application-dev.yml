@@ -2,16 +2,22 @@ server:
   port: 8050
 
 spring:
+  datasource:
+    batch:
+      url: jdbc-path
+      username: dummyuser
+      password: dummypass
+      driver-class-name: @driver-class@
+    app:
+      url: jdbc-path
+      username: dummyuser
+      password: dummypass
+      driver-class-name: @driver-class@
   sleuth:
     enabled: true
   #  output:
   #    ansi:
   #      enabled: always
-  datasource:
-    url: jdbc-path
-    username: dummyuser
-    password: dummypass
-    driver-class-name: @driver-class@
   jpa:
     show-sql: true
     hibernate:

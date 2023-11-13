@@ -1,6 +1,6 @@
-package com.axial.examples.database.entity;
+package com.axial.examples.database.test_db.entity;
 
-import com.axial.examples.database.composite_pk.UserHobbyId;
+import com.axial.examples.database.test_db.composite_pk.UserHobbyId;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @IdClass(UserHobbyId.class)
-@Table(name = "DM_TBL_USER_HOBBY")
+@Table(name = "dm_tbl_user_hobby")
 public class UserHobbyEntity {
 
     @Id
