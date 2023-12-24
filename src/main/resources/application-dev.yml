@@ -37,7 +37,8 @@ logging:
   level:
     org.springframework.web: DEBUG
     guru.springframework.controllers: DEBUG
-    org.hibernate: DEBUG
+    org.springframework.jdbc: DEBUG
+    org.hibernate: INFO
   file:
     name: logs/dev_app.log
   org:

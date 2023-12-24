@@ -1,16 +1,15 @@
 package com.axial.examples.database.test_db.repository.jdbc_template;
 
 import com.axial.examples.database.test_db.model.UserHobbyExtRowMapperModel;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Repository
-@AllArgsConstructor
+@Component
 public class UserJdbcDao {
 
     /*
@@ -28,9 +27,21 @@ public class UserJdbcDao {
             + " LEFT JOIN dm_tbl_user U ON U.USR_ID = UH.USRHBY_USR_ID"
             + " LEFT JOIN dm_tbl_hobby H ON H.HOBBY_ID = UH.USRHBY_HOBBY_ID";
 
-    private final @Qualifier("namedParameterJdbcTemplateTest") NamedParameterJdbcTemplate jdbcTemplate;
+    private final NamedParameterJdbcTemplate namedJdbcTemplate;
 
-    public List<UserHobbyExtRowMapperModel> getUserHobbyExtModels() {
+    private final JdbcTemplate jdbcTemplate;
+
+    public UserJdbcDao(@Qualifier("namedParameterJdbcTemplateTest") NamedParameterJdbcTemplate namedJdbcTemplate,
+                       @Qualifier("jdbcTemplateTest") JdbcTemplate jdbcTemplate) {
+        this.namedJdbcTemplate = namedJdbcTemplate;
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public List<UserHobbyExtRowMapperModel> getUserHobbyExtModelsWithJdbcTemplate() {
+        return jdbcTemplate.query(getUserHobbyExtSQL, new UserHobbyExtRowMapperModel());
+    }
+
+    public List<UserHobbyExtRowMapperModel> getUserHobbyExtModelsWithNamedJdbcTemplate() {
 
         /*
             // Eğer bir parametre de geçilecekse böyle yapılacak.
@@ -41,7 +52,7 @@ public class UserJdbcDao {
             MapSqlParameterSource parameters = new MapSqlParameterSource();
             parameters.addValue("searchText", searchText);
          */
-        return jdbcTemplate.query(getUserHobbyExtSQL, (MapSqlParameterSource) null, new UserHobbyExtRowMapperModel());
+        return namedJdbcTemplate.query(getUserHobbyExtSQL, (MapSqlParameterSource) null, new UserHobbyExtRowMapperModel());
 
     }
 

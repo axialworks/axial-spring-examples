@@ -15,16 +15,17 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     List<UserEntity> findAll();
 
+
     @Query(
             "SELECT"
-                + " new com.axial.examples.database.model.UserHobbyExtNoMapperModel("
+                + " new com.axial.examples.database.test_db.model.UserHobbyExtNoMapperModel("
                     + "U.id, U.name, U.nickname, H.id, H.name"
                 + ")"
             + " FROM UserHobbyEntity UH"
             + " LEFT JOIN UserEntity U ON U.id = UH.userId"
             + " LEFT JOIN HobbyEntity H ON H.id = UH.hobbyId"
     )
-    List<UserHobbyExtNoMapperModel> findUserCityExtNoMapperList();
+    List<UserHobbyExtNoMapperModel> findUserHobbyExtNoMapperList();
 
     /*
         Bu senaryoda JPA metodu bir HashMap dönüyor.
@@ -41,6 +42,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
             + " LEFT JOIN UserEntity U ON U.id = UH.userId"
             + " LEFT JOIN HobbyEntity H ON H.id = UH.hobbyId"
     )
-    List<Map<String, Object>> findUserCityExtHashMapList();
+    List<Map<String, Object>> findUserHobbyExtHashMapList();
 
 }

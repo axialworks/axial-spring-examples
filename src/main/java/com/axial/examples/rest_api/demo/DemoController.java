@@ -1,5 +1,7 @@
 package com.axial.examples.rest_api.demo;
 
+import com.axial.examples.database.app_db.repository.jdbc_template.CategoryJdbcDao;
+import com.axial.examples.database.app_db.repository.jpa.CategoryRepository;
 import com.axial.examples.database.test_db.entity.UserEntity;
 import com.axial.examples.database.test_db.repository.jdbc_template.UserJdbcDao;
 import com.axial.examples.database.test_db.repository.jpa.HobbyRepository;
@@ -7,13 +9,13 @@ import com.axial.examples.database.test_db.repository.jpa.UserHobbyRepository;
 import com.axial.examples.database.test_db.repository.jpa.UserRepository;
 import com.axial.examples.extension.message.enums.BaseMessageKey;
 import com.axial.modules.commons.component.exception.ExceptionHelper;
+import com.axial.modules.commons.component.mapping.ObjectMappingService;
 import com.axial.modules.commons.core.message.enums.CommonMessageKey;
 import com.axial.modules.commons.core.message.enums.Severity;
+import com.axial.modules.commons.core.request.model.GenericSuccessResponse;
 import com.axial.modules.commons.core.template_engine.HtmlTemplateService;
 import com.axial.modules.commons.core.template_engine.TextTemplateService;
 import com.axial.modules.commons.model.SuccessResponse;
-import com.axial.modules.commons.component.mapping.ObjectMappingService;
-import com.axial.modules.commons.core.request.model.GenericSuccessResponse;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.MapUtils;
 import org.springframework.http.MediaType;
@@ -45,6 +47,10 @@ public class DemoController {
     private final UserHobbyRepository userHobbyRepository;
 
     private final UserJdbcDao userJdbcDao;
+
+    private final CategoryJdbcDao categoryJdbcDao;
+
+    private final CategoryRepository categoryRepository;
 
 
     @GetMapping(value = "/demo1", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -148,15 +154,19 @@ public class DemoController {
         final GenericSuccessResponse response = GenericSuccessResponse.builder().success(true).build();
 
         final List<UserEntity> userEntityList = userRepository.findAll();
-        response.addHashItem("userList", userEntityList);
+        response.addHashItem("TestDB - userList", userEntityList);
 
-        response.addHashItem("hobbyList", hobbyRepository.findAll());
-        response.addHashItem("userHobbyList", userHobbyRepository.findAll());
+        response.addHashItem("TestDB - hobbyList", hobbyRepository.findAll());
+        response.addHashItem("TestDB - userHobbyList", userHobbyRepository.findAll());
 
-        response.addHashItem("userHobbyExtNoMapperList", userRepository.findUserCityExtNoMapperList());
-        response.addHashItem("userCityExtHashMapList", userRepository.findUserCityExtHashMapList());
+        response.addHashItem("TestDB - userHobbyExtNoMapperList", userRepository.findUserHobbyExtNoMapperList());
+        response.addHashItem("TestDB - userHobbyExtHashMapList", userRepository.findUserHobbyExtHashMapList());
 
-        response.addHashItem("userHobbyExtNoMapperDaoList", userJdbcDao.getUserHobbyExtModels());
+        response.addHashItem("TestDB - userHobbyExtModelsWithJdbcTemplate", userJdbcDao.getUserHobbyExtModelsWithJdbcTemplate());
+        response.addHashItem("TestDB - userHobbyExtModelsWithNamedJdbcTemplate", userJdbcDao.getUserHobbyExtModelsWithNamedJdbcTemplate());
+
+        response.addHashItem("AppDB - categoryList", categoryRepository.findAll());
+        response.addHashItem("AppDB - categoryListWithJdbcTemplate", categoryJdbcDao.getCategoryListWithJdbcTemplate());
 
         return ResponseEntity.ok(response);
     }

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -23,18 +24,17 @@ import javax.sql.DataSource;
 
             // Service methods (e.g., getAllProducts, addProduct, updateProduct, deleteProduct)
         }
-
  */
 @Configuration
+@EnableTransactionManagement
 public class TestJdbcConfiguration {
 
     /*
      * Example Usage:
 
          @Autowired
-         @Qualifier("jdbcTemplateApp")
+         @Qualifier("jdbcTemplateTest")
          JdbcTemplate jdbcTemplate;
-
      */
     @Bean(name = "jdbcTemplateTest")
     public JdbcTemplate testJdbcTemplate(
@@ -48,7 +48,6 @@ public class TestJdbcConfiguration {
          @Autowired
          @Qualifier("namedJdbcTemplateTest")
          NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
      */
     @Bean(name = "namedParameterJdbcTemplateTest")
     public NamedParameterJdbcTemplate testNamedParameterJdbcTemplate(
