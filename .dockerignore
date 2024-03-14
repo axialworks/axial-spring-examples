@@ -1,0 +1,13 @@
+
+# Log Files
+logs/
+
+# Git Files
+.git
+
+# Java Build Outputs
+#target/
+
+# Idea Files
+*.iml
+.idea

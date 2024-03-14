@@ -31,6 +31,11 @@ public class UserJdbcDao {
 
     private final JdbcTemplate jdbcTemplate;
 
+    /*
+     * JDBC kullanılacağı zaman @AllArgsConstructor çalışırken sıkıntı çıkarıyor.
+     * Sürekli son initialize edilen DataSource'u kullanıyor.
+     * İki Datasource ve JDBC bağlantısını da kullanabilmek için aşağıdaki gibi bir constructor kullanmamız gerekiyor.
+     */
     public UserJdbcDao(@Qualifier("namedParameterJdbcTemplateTest") NamedParameterJdbcTemplate namedJdbcTemplate,
                        @Qualifier("jdbcTemplateTest") JdbcTemplate jdbcTemplate) {
         this.namedJdbcTemplate = namedJdbcTemplate;

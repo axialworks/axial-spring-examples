@@ -1,0 +1,50 @@
+#
+
+# kubectl get deployments -n demo-work
+
+# kubectl create -f deployment.yaml
+
+# kubectl delete deployment example-app -n demo-work
+# kubectl delete -f example-app -n demo-work
+
+# kubectl get pods --namespace demo-work
+# kubectl get pods -n demo-work
+
+#
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: examples-app-svc
+  namespace: demo-work
+spec:
+  type: LoadBalancer
+  selector:
+    app: examples-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 18090 # Port on the Service - Port for Accessing Externally
+      targetPort: 8080 # Port on the Pod - Port of Tomcat
+      # nodePort: 32230 # Port for accessing from another pod
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: examples-app-dpl
+  namespace: demo-work
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: examples-app
+  template:
+    metadata:
+      labels:
+        app: examples-app
+    spec:
+      containers:
+        - name: examples-app-container
+          image: examples-app:1.0
+          ports:
+            - containerPort: 8080  # Port on the Pod - Port of Tomcat

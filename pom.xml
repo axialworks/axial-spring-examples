@@ -25,7 +25,7 @@
 
         <java.version>17</java.version>
 
-
+        <tomcat-catalina.version>10.1.17</tomcat-catalina.version>
 
     </properties>
 
@@ -69,11 +69,42 @@
         </dependency>
         -->
 
+        <!-- Database Dependencies -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+        </dependency>
+
     </dependencies>
 
+    <!--
     <profiles>
 
+        <profile>
+            <id>deploy-local-tomcat</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat</groupId>
+                        <artifactId>tomcat-catalina</artifactId>
+                        <version>${tomcat-catalina.version}</version>
+                        <configuration>
+                            <url>http://localhost:8080/manager/text</url>
+                            <server>TomcatServer</server>
+                            <path>/examples</path>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
     </profiles>
+    -->
 
     <build>
         <plugins>

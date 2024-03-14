@@ -1,18 +1,28 @@
 server:
-  port: 8050
+  port: 8060
 
 spring:
   datasource:
-    batch:
-      url: jdbc-path
-      username: dummyuser
-      password: dummypass
-      driver-class-name: @driver-class@
+    #app:
+    # url: jdbc-path
+    # username: dummy-user
+    # password: dummy-pass
+    # driver-class-name: dummy-driver
+    #test:
+    # url: jdbc-path
+    # username: dummy-user
+    # password: dummy-pass
+    # driver-class-name: dummy-driver
     app:
-      url: jdbc-path
-      username: dummyuser
-      password: dummypass
-      driver-class-name: @driver-class@
+      url: jdbc:mariadb://bl-nas:3307/media_db
+      username: nas_db_user
+      password: BL-db.112358
+      driver-class-name: org.mariadb.jdbc.Driver
+    test:
+      url: jdbc:mariadb://selmankaya.com:3306/selmank1_test_db
+      username: selmank1_app
+      password: NM$8pS3o2lR7
+      driver-class-name: org.mariadb.jdbc.Driver
   sleuth:
     enabled: true
   #  output:
