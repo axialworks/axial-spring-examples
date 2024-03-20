@@ -10,7 +10,7 @@
 # docker tag examples-app:latest examples-app:1.0
 
 # Docker export and save image:
-# docker save examples-app:latest > examples-app.tar
+# docker save examples- app:latest > examples-app.tar
 
 ##############################################################
 ###### Working Example - Spring Boot Run ######
@@ -41,7 +41,7 @@ FROM tomcat:10.1.17-jdk17-temurin-jammy AS tomcat-deploy-stage
 WORKDIR /usr/local/tomcat/webapps
 
 # Copy the WAR file into Tomcat directory - If dockerignore file exists /target path discarded!!!!!!
-COPY target/examples-1.0.war ./examples.war
+COPY target/spring-boot-examples-1.0.war ./examples.war
 
 # Run Tomcat
 CMD ["catalina.sh", "run"]
@@ -63,7 +63,7 @@ CMD ["catalina.sh", "run"]
 
 # WORKDIR /app
 
-# RUN cp files/target/examples-1.0.war examples.war
+# RUN cp files/target/spring-boot-examples-1.0.war examples.war
 
 # RUN rm -r files
 
