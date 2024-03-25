@@ -8,14 +8,14 @@
         <groupId>com.axial.spring</groupId>
         <artifactId>spring-boot-parent</artifactId>
         <version>1.0</version>
-        <relativePath>../spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../../spring-boot-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.axial.spring</groupId>
+    <groupId>com.axial.spring.examples</groupId>
     <artifactId>spring-boot-examples</artifactId>
     <version>1.0</version>
 
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <name>spring-boot-examples</name>
     <description>Examples App</description>
@@ -29,143 +29,11 @@
 
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
+    <modules>
+        <module>playground</module>
+        <module>single_database</module>
+        <module>multiple_database</module>
+    </modules>
 
-
-        </dependencies>
-    </dependencyManagement>
-
-    <dependencies>
-
-        <!-- Axial Dependencies -->
-        <dependency>
-            <groupId>com.axial.spring.modules</groupId>
-            <artifactId>spring-boot-openapi</artifactId>
-            <version>1.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-lang3</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-collections4</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.axial.spring.modules</groupId>
-            <artifactId>spring-boot-commons</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-        <!--
-        <dependency>
-            <groupId>com.axial.spring.modules</groupId>
-            <artifactId>batch</artifactId>
-            <version>1.0</version>
-        </dependency>
-        -->
-
-        <!-- Database Dependencies -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mariadb.jdbc</groupId>
-            <artifactId>mariadb-java-client</artifactId>
-        </dependency>
-
-    </dependencies>
-
-    <!--
-    <profiles>
-
-        <profile>
-            <id>deploy-local-tomcat</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.tomcat</groupId>
-                        <artifactId>tomcat-catalina</artifactId>
-                        <version>${tomcat-catalina.version}</version>
-                        <configuration>
-                            <url>http://localhost:8080/manager/text</url>
-                            <server>TomcatServer</server>
-                            <path>/examples</path>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-    </profiles>
-    -->
-
-    <build>
-        <plugins>
-
-            <plugin>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <outputFileName>openapi.json</outputFileName>
-                    <outputDir>target</outputDir>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${maven-war-plugin.version}</version>
-                <!--Adding a provided "spring-boot-starter-tomcat" dependency as stated in-->
-                <!--here https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-create-a-deployable-war-file-->
-                <!--doesn't work. The generated war runs on Weblogic but the project won't run via spring-boot:run or via IDE-->
-                <configuration>
-                    <packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>pre-integration-test</id>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-integration-test</id>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-
-        <!-- Solves @ char problem inside yml files -->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
-    </build>
-
+   
 </project>

@@ -1,0 +1,52 @@
+api-config:
+  name: Base Application Backend APIs
+  version: @project.version@
+  domains:
+    - /examples
+  apis:
+    APP_API:
+      name: AppAPI
+      group-name: App API
+      description: Base Backend App Services
+      path: /app/**
+    MANAGEMENT_API:
+      name: ManagementAPI
+      group-name: Management API
+      description: Base Backend Management Services
+      path: /management/**
+
+axial:
+  message-bundle: ExampleMessages
+  default-locale: tr
+
+server:
+  servlet:
+    context-path: /examples
+    session:
+      cookie:
+        secure: true
+
+springdoc:
+  swagger-ui:
+    display-operation-id: true
+    try-it-out-enabled: true
+    filter: true
+  group-configs:
+    - group: AppAPI
+      display-name: App API
+      paths-to-match:
+        - /app/**
+    - group: ManagementAPI
+      display-name: Management API
+      paths-to-match:
+        - /management/**
+
+spring:
+  application:
+    name: examples
+  profiles:
+    active: dev
+  cloud:
+    config:
+      enabled: false
+      fail-fast: false

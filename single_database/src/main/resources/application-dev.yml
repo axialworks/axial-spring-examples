@@ -1,0 +1,45 @@
+server:
+  port: 8060
+
+spring:
+  datasource:
+    app:
+      url: jdbc-path
+      username: dummy-user
+      password: dummy-pass
+      driver-class-name: dummy-driver
+    test:
+      url: jdbc-path
+      username: dummy-user
+      password: dummy-pass
+      driver-class-name: dummy-driver
+  sleuth:
+    enabled: true
+  #  output:
+  #    ansi:
+  #      enabled: always
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        use_sql_comments: true
+        format_sql: true
+        type: INFO
+  #  config:
+  #    use-legacy-processing: true
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    org.springframework.jdbc: DEBUG
+    org.hibernate: INFO
+  file:
+    name: logs/dev_app.log
+  org:
+    thymeleaf: DEBUG
