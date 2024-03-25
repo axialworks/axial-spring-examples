@@ -5,22 +5,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/../batch/pom.xml" />
-        <option value="$PROJECT_DIR$/../commons/pom.xml" />
-        <option value="$PROJECT_DIR$/../openapi/pom.xml" />
-        <option value="$PROJECT_DIR$/../parent-pom/pom.xml" />
-        <option value="$PROJECT_DIR$/../sample-backend/pom.xml" />
-        <option value="$PROJECT_DIR$/../spring-boot-parent/pom.xml" />
-        <option value="$PROJECT_DIR$/../spring-boot-openapi/pom.xml" />
-        <option value="$PROJECT_DIR$/../spring-boot-commons/pom.xml" />
         <option value="$PROJECT_DIR$/../spring-boot-batch/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring-boot-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring-boot-openapi/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring-boot-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/../sample-backend/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/../parent-pom/pom.xml" />
-        <option value="$PROJECT_DIR$/examples/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />
