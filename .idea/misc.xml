@@ -10,7 +10,18 @@
         <option value="$PROJECT_DIR$/../spring-boot-openapi/pom.xml" />
         <option value="$PROJECT_DIR$/../spring-boot-parent/pom.xml" />
         <option value="$PROJECT_DIR$/../sample-backend/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arch-file/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arc-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arch-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arc-common/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arch-file/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arch-util/pom.xml" />
+        <option value="$PROJECT_DIR$/../../bl-archive/bl-arch_util/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK" />

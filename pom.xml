@@ -8,7 +8,7 @@
         <groupId>com.axial.spring</groupId>
         <artifactId>spring-boot-parent</artifactId>
         <version>1.0</version>
-        <relativePath>../../spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../spring-boot-parent/pom.xml</relativePath>
     </parent>
 
     <groupId>com.axial.spring.examples</groupId>
