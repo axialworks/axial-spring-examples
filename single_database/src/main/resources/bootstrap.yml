@@ -1,5 +1,5 @@
 api-config:
-  name: Base Application Backend APIs
+  name: Example Application Single Database Backend APIs
   version: @project.version@
   domains:
     - /examples
@@ -7,12 +7,12 @@ api-config:
     APP_API:
       name: AppAPI
       group-name: App API
-      description: Base Backend App Services
+      description: Example Application Single Database App Services
       path: /app/**
     MANAGEMENT_API:
       name: ManagementAPI
       group-name: Management API
-      description: Base Backend Management Services
+      description: Example Application Single Database Management Services
       path: /management/**
 
 axial:

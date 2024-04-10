@@ -12,12 +12,12 @@
     </parent>
 
     <groupId>com.axial.spring.examples</groupId>
-    <artifactId>spring-boot-multiple-database-example</artifactId>
+    <artifactId>spring-boot-examples-multiple-database</artifactId>
     <version>1.0</version>
 
     <packaging>war</packaging>
 
-    <name>spring-boot-multiple-database-example</name>
+    <name>spring-boot-examples-multiple-database</name>
     <description>Multiple Database Examples App</description>
     <url></url>
 

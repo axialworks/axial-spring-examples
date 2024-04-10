@@ -12,12 +12,12 @@
     </parent>
 
     <groupId>com.axial.spring.examples</groupId>
-    <artifactId>spring-boot-single-database-example</artifactId>
+    <artifactId>spring-boot-examples-single-database</artifactId>
     <version>1.0</version>
 
     <packaging>war</packaging>
 
-    <name>spring-boot-single-database-example</name>
+    <name>spring-boot-examples-single-database</name>
     <description>Single Database Examples App</description>
     <url></url>
 

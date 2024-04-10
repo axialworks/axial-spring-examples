@@ -18,19 +18,21 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
-        <module name="spring-boot-single-database-example" />
+        <module name="spring-boot-examples-multiple-database" />
         <module name="spring-boot-openapi" />
         <module name="sample-backend" />
         <module name="spring-boot-examples-playground" />
+        <module name="spring-boot-examples-single-database" />
         <module name="spring-boot-commons" />
         <module name="spring-boot-batch" />
-        <module name="spring-boot-multiple-database-example" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bl-arc-common" target="17" />
       <module name="bl-arch-file" target="17" />
       <module name="bl-arch-util" target="17" />
+      <module name="spring-boot-multiple-database-example" target="17" />
+      <module name="spring-boot-single-database-example" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

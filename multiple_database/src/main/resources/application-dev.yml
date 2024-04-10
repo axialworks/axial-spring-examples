@@ -3,16 +3,10 @@ server:
 
 spring:
   datasource:
-    app:
-      url: jdbc-path
-      username: dummy-user
-      password: dummy-pass
-      driver-class-name: dummy-driver
-    test:
-      url: jdbc-path
-      username: dummy-user
-      password: dummy-pass
-      driver-class-name: dummy-driver
+    url: jdbc-path
+    username: dummy-user
+    password: dummy-pass
+    driver-class-name: dummy-driver
   sleuth:
     enabled: true
   #  output:
