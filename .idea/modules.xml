@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../axial-spring-private/axial-spring-private.iml" filepath="$PROJECT_DIR$/../axial-spring-private/axial-spring-private.iml" />
       <module fileurl="file://$PROJECT_DIR$/playground/spring-boot-examples-playground.iml" filepath="$PROJECT_DIR$/playground/spring-boot-examples-playground.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../spring-boot-private/spring-boot-private.iml" filepath="$PROJECT_DIR$/../spring-boot-private/spring-boot-private.iml" />
     </modules>
   </component>
 </project>

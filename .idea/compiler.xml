@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-      <profile name="Annotation profile for spring-boot-openapi" enabled="true">
+      <profile name="Annotation profile for spring-boot-examples" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,19 +19,30 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
         <module name="spring-boot-examples-multiple-database" />
-        <module name="spring-boot-openapi" />
-        <module name="sample-backend" />
         <module name="spring-boot-examples-playground" />
         <module name="spring-boot-examples-single-database" />
-        <module name="spring-boot-commons" />
-        <module name="spring-boot-batch" />
+        <module name="axial-spring-module-batch" />
+        <module name="axial-spring-module-openapi" />
+        <module name="sample-backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="axial-cache" target="17" />
+      <module name="axial-spring-batch" target="17" />
+      <module name="axial-spring-boot-modules" target="17" />
+      <module name="axial-spring-boot-parent (1)" target="17" />
+      <module name="axial-spring-boot-parent (1) (com.axial.spring.modules)" target="17" />
+      <module name="axial-spring-boot-parent (2)" target="17" />
+      <module name="axial-spring-boot-parent (2) (com.axial.spring)" target="17" />
+      <module name="axial-spring-module-cache" target="17" />
+      <module name="axial-spring-module-utils" target="17" />
+      <module name="axial-utils" target="17" />
       <module name="bl-arc-common" target="17" />
       <module name="bl-arch-file" target="17" />
       <module name="bl-arch-util" target="17" />
+      <module name="bl-one-common-classes" target="17" />
       <module name="spring-boot-multiple-database-example" target="17" />
+      <module name="spring-boot-openapi" target="17" />
       <module name="spring-boot-single-database-example" target="17" />
     </bytecodeTargetLevel>
   </component>

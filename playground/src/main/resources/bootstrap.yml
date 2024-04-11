@@ -7,12 +7,12 @@ api-config:
     APP_API:
       name: AppAPI
       group-name: App API
-      description: Example Application Multiple Database App Services
+      description: Example Application Playground App Services
       path: /app/**
     MANAGEMENT_API:
       name: ManagementAPI
       group-name: Management API
-      description: Example Application Multiple Database Management Services
+      description: Example Application Playground Management Services
       path: /management/**
 
 axial:
@@ -40,6 +40,11 @@ springdoc:
       display-name: Management API
       paths-to-match:
         - /management/**
+    - group: AlphaAPI
+      display-name: Alpha API
+      packages-to-scan:
+        - com.axial.examples.playground.rest_api.alpha
+        #- com.axial.examples.playground.rest_api.demo
 
 spring:
   application:

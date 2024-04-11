@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.axial.spring</groupId>
-        <artifactId>spring-boot-parent</artifactId>
+        <groupId>com.axial.spring.examples</groupId>
+        <artifactId>spring-boot-examples</artifactId>
         <version>1.0</version>
-        <relativePath>../../spring-boot-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.axial.spring.examples</groupId>
@@ -41,7 +41,7 @@
         <!-- Axial Dependencies -->
         <dependency>
             <groupId>com.axial.spring.modules</groupId>
-            <artifactId>spring-boot-openapi</artifactId>
+            <artifactId>axial-spring-module-openapi</artifactId>
             <version>1.0</version>
             <exclusions>
                 <exclusion>
@@ -57,7 +57,7 @@
 
         <dependency>
             <groupId>com.axial.spring.modules</groupId>
-            <artifactId>spring-boot-commons</artifactId>
+            <artifactId>axial-spring-module-utils</artifactId>
             <version>1.0</version>
         </dependency>
 
